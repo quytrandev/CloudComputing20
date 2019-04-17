@@ -6,6 +6,7 @@ import java.util.List;
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import newspaper.dao.PostRepository;
 import newspaper.Models.PostModel;
@@ -24,5 +25,13 @@ public class PostService {
 			lstPosts.add(posts);
 		}
 		return lstPosts;
+	}
+	
+	public void createPost(PostModel postModel) {
+		postRepository.save(postModel);
+	}
+	
+	public void deletePost(int id) {
+		postRepository.delete(id);
 	}
 }
