@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.HttpServerErrorException;
 
 import newspaper.Models.PostModel;
 import newspaper.service.PostService;
@@ -39,6 +40,10 @@ public class MainController {
 		
 		request.setAttribute("posts", postService.getPostsByType(type));
 
+	}
+	@RequestMapping (value= {"post"},method=RequestMethod.GET)
+	public void viewPost(@RequestParam int id,HttpServletRequest request) {
+		request.setAttribute("posts", postService.getPostById(id));
 	}
 	@GetMapping ("postmanagement/add")
 	public String addPost(HttpServletRequest request){

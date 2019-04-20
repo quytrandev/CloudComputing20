@@ -26,6 +26,14 @@ public class PostService {
 		}
 		return posts;
 	}
+	
+	public List<PostModel> getPostById(int id){
+		List<PostModel> posts= new ArrayList<>();
+		for(PostModel post:postRepository.findById(id)) {
+			posts.add(post);
+		}
+		return posts;
+	}
 	public List<PostModel> getPostsByType(String type){
 		if(type.equalsIgnoreCase("thoisu")) {
 			type = "Thời Sự";
@@ -38,6 +46,9 @@ public class PostService {
 		}
 		else if(type.equalsIgnoreCase("thethao")) {
 			type = "Thể Thao";
+		}
+		else if(type.equalsIgnoreCase("chinhtri")) {
+			type = "Chính Trị";
 		}
 		List<PostModel> posts= new ArrayList<>();
 		for(PostModel post:postRepository.findByType(type)) {

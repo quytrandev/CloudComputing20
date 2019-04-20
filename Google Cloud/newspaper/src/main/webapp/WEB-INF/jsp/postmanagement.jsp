@@ -20,12 +20,16 @@
    
 </head>
 <body>
+
 <c:choose>
 		
 		<c:when test="${mode == 'MODE_POSTS'}">
 			<div class="container text-center" id="tasksDiv">
 				<h3>Post Management</h3>
 				<hr>
+				<div class="form-group">
+					<a href="postmanagement/add">Create a new post</a>
+					</div>
 				<div class="table-responsive">
 					<table class="table table-striped table-bordered text-left">
 						<thead>
@@ -45,7 +49,7 @@
 								<th>Type</th>
 								<th>Author</th>
 								<th></th>
-																<th></th>
+								<th></th>
 								
 							</tr>
 						</thead>
@@ -56,7 +60,7 @@
 									<td>${post.title}</td>
 									<td>${post.description}</td>
 									<td>${post.thumbnail}</td>
-									<td>${post.content1}</td>
+									<td >${post.content1}</td>
 									<td>${post.content2}</td>
 									<td>${post.content3}</td>
 									<td>${post.content4}</td>
@@ -64,7 +68,7 @@
 									<td>${post.image2}</td>
 									<td>${post.image3}</td>
 									<td>${post.image4}</td>
-									<td width=100px>${post.type}</td>
+									<td >${post.type}</td>
 									<td>${post.author}</td>
 									<td><a href="postmanagement/update?id=${post.id}"><span class="glyphicon glyphicon-pencil"></span></a></td>
 									<td><a href="postmanagement/delete?id=${post.id}"><span class="glyphicon glyphicon-trash"></span></a></td>
@@ -72,9 +76,7 @@
 							</c:forEach>
 						</tbody>
 					</table>
-					<div class="form-group">
-					<a href="postmanagement/add">Create a new post</a>
-					</div>
+					
 				</div>
 			</div>
 		</c:when>
@@ -154,7 +156,7 @@
 					<div class="form-group">
 						<label class="control-label col-md-3">Type</label>
 						<div class="col-md-7">
-							<input type="text" class="form-control" name="image4" value="${post.type}"/>
+							<input type="text" class="form-control" name="type" value="${post.type}"/>
 						</div>				
 					</div>
 					<div class="form-group">

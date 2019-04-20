@@ -40,19 +40,7 @@
 							</div>
 
 							<!-- Login Search Area -->
-							<div class="login-search-area d-flex align-items-center">
-
-								<!-- Search Form -->
-								<div class="search-form">
-									<form action="#" method="post">
-										<input type="search" name="search" class="form-control"
-											placeholder="Tìm kiếm">
-										<button type="submit">
-											<i class="fa fa-search" aria-hidden="true"></i>
-										</button>
-									</form>
-								</div>
-							</div>
+							<div class="login-search-area d-flex align-items-center"></div>
 						</div>
 					</div>
 				</div>
@@ -96,6 +84,8 @@
 									<li><a href="category?type=thegioi">Thế giới</a></li>
 									<li><a href="category?type=congnghe">Công nghệ</a></li>
 									<li><a href="category?type=thethao">Thể thao</a></li>
+									<li><a href="category?type=chinhtri">Chính trị</a></li>
+
 									<li><a href="/postmanagement">Quản lý bài đăng</a></li>
 
 								</ul>
@@ -119,7 +109,7 @@
 				<div class="col-12">
 					<div class="blog-posts-area">
 						<c:forEach var="post" items="${posts}">
-						
+
 							<!-- Single Featured Post -->
 							<div class="single-blog-post featured-post mb-30 ">
 								<div class="post-thumb">
@@ -127,9 +117,8 @@
 										src="static/img/newspaper-img/thumbnail/${post.id}.jpg" alt=""></a>
 								</div>
 								<div class="post-data">
-									<a href="#" class="post-catagory">${post.type}</a>
-									 <a href="#"
-										class="post-title">
+									<p class="post-catagory">${post.type}</p>
+									<a href="#" class="post-title">
 										<h6>${post.title}</h6>
 									</a>
 									<div class="post-meta">
@@ -144,7 +133,7 @@
 							<hr />
 
 						</c:forEach>
-						
+
 					</div>
 
 
@@ -235,7 +224,7 @@
 							<div class="footer-widget-area mt-80">
 								<!-- Footer Logo -->
 								<div class="footer-logo">
-									<a href="" style="color: white; font-size: 50px">NEWSPAPER</a>
+									<a href="/" style="color: white; font-size: 50px">NEWSPAPER</a>
 								</div>
 								<!-- List -->
 								<ul class="list">

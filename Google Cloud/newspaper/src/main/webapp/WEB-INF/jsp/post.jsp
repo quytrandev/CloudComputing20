@@ -2,12 +2,11 @@
 <html lang="en">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
 <head>
 <meta charset="UTF-8">
 <meta name="description" content="">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <!-- The above 4 meta tags *must* come first in the head; any other head content must come *after* these tags -->
@@ -16,7 +15,7 @@
 <title>The News Paper - News &amp; Lifestyle Magazine Template</title>
 
 <!-- Favicon -->
-<link rel="icon" href="static/static/img/core-img/favicon.ico">
+<link rel="icon" href="img/core-img/favicon.ico">
 
 <!-- Core Stylesheet -->
 <link rel="stylesheet" href="static/style.css">
@@ -85,6 +84,7 @@
 									<li><a href="category?type=congnghe">Công nghệ</a></li>
 									<li><a href="category?type=thethao">Thể thao</a></li>
 									<li><a href="category?type=chinhtri">Chính trị</a></li>
+
 									<li><a href="/postmanagement">Quản lý bài đăng</a></li>
 
 								</ul>
@@ -96,32 +96,25 @@
 			</div>
 		</div>
 	</header>
-	<!-- ##### Header Area End ##### -->
 
 
 
 	<!-- ##### Blog Area Start ##### -->
-	<div style="padding-top: 20px" class="blog-area section-padding-0-80">
+	<div class="blog-area section-padding-0-80">
 		<div class="container">
 			<div class="row">
-				<div class="section-heading">
-					<h6>TIN TỨC</h6>
-				</div>
-
-				<div class="row">
-					<c:forEach var="post" items="${posts}">
-
-						<!-- Single Post -->
-						<div class="col-12 col-md-6">
-							<div class="single-blog-post style-3">
+				<div class="col-12 text-center">
+					<div class="blog-posts-area">
+						<c:forEach var="post" items="${posts}">
+							<!-- Single Featured Post -->
+							<div class="single-blog-post featured-post single-post">
 								<div class="post-thumb">
-
-									<a href="post?id=${post.id}"><img
-										src="static/img/newspaper-img/thumbnail/${post.id}.jpg" alt=""></a>
+									<a href="#"><img
+										src="static/img/newspaper-img/${post.id}.jpg" alt=""></a>
 								</div>
 								<div class="post-data">
-									<p class="post-catagory">${post.type}</p>
-									<a href="post?id=${post.id}" class="post-title">
+									<a href="#" class="post-catagory">${post.type}</a> <a href="#"
+										class="post-title">
 										<h6>${post.title}</h6>
 									</a>
 									<div class="post-meta">
@@ -130,86 +123,45 @@
 										</p>
 										<p class="post-excerp">${post.description}</p>
 
+										<p>${post.content1}</p>
+										<img src="static/img/newspaper-img/${post.id}_1.jpg" alt="">
+										<p style="padding: 20px">${post.content2}</p>
+										<img src="static/img/newspaper-img/${post.id}_2.jpg" alt="">
+										<p style="padding: 20px">${post.content3}</p>
+										<img src="static/img/newspaper-img/${post.id}_3.jpg" alt="">
+										<p style="padding: 20px">${post.content4}</p>
+										<img src="static/img/newspaper-img/${post.id}_4.jpg" alt="">
+
+										<div
+											class="newspaper-post-like d-flex align-items-center justify-content-between">
+											<!-- Tags -->
+											<div class="newspaper-tags d-flex">
+												<span>Tags:</span>
+												<ul class="d-flex">
+													<li><a href="#">${post.type}</a></li>
+
+												</ul>
+											</div>
+
+
+										</div>
 									</div>
 								</div>
 							</div>
-
-				</div>
-					</c:forEach>
-
-
-			</div>
-		</div>
+						</c:forEach>
 
 
 
-	</div>
-
-	<!-- ##### Popular News Area End ##### -->
-
-	<!-- ##### Video Post Area Start ##### -->
-	<div class="video-post-area bg-img bg-overlay"
-		style="background-image: url(static/img/bg-img/bg1.jpg);">
-		<div class="container">
-			<div class="row justify-content-center">
-				<!-- Single Video Post -->
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="single-video-post">
-						<img src="static/img/bg-img/video1.jpg" alt="">
-						<!-- Video Button -->
-						<div class="videobtn">
-							<a href="https://www.youtube.com/watch?v=5BQr-j3BBzU"
-								class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Single Video Post -->
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="single-video-post">
-						<img src="static/img/bg-img/video2.jpg" alt="">
-						<!-- Video Button -->
-						<div class="videobtn">
-							<a href="https://www.youtube.com/watch?v=5BQr-j3BBzU"
-								class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Single Video Post -->
-				<div class="col-12 col-sm-6 col-md-4">
-					<div class="single-video-post">
-						<img src="static/img/bg-img/video3.jpg" alt="">
-						<!-- Video Button -->
-						<div class="videobtn">
-							<a href="https://www.youtube.com/watch?v=5BQr-j3BBzU"
-								class="videoPlayer"><i class="fa fa-play" aria-hidden="true"></i></a>
-						</div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<!-- ##### Video Post Area End ##### -->
-
-
-
-	<!-- ##### Footer Add Area Start ##### -->
-	<div class="footer-add-area">
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<div class="footer-add">
-						<a href="#"><img src="static/img/bg-img/footer-add.gif" alt=""></a>
-					</div>
-				</div>
-			</div>
-		</div>
 	</div>
-	<!-- ##### Footer Add Area End ##### -->
+	<!-- ##### Blog Area End ##### -->
 
 	<!-- ##### Footer Area Start ##### -->
-	<footer class="footer-area" style="margin-bottom: -550px">
+	<footer class="footer-area">
 
 		<!-- Main Footer Area -->
 		<div class="main-footer-area">
