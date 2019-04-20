@@ -91,7 +91,7 @@
 							<div class="classynav">
 								<ul>
 									<li class="active"><a href="/">Trang chủ</a></li>
-									
+
 									<li><a href="category?type=thoisu">Thời sự</a></li>
 									<li><a href="category?type=thegioi">Thế giới</a></li>
 									<li><a href="category?type=congnghe">Công nghệ</a></li>
@@ -116,9 +116,10 @@
 		<div class="container">
 			<div class="row">
 				<br />
-				<div class="col-12 text-center">
+				<div class="col-12">
 					<div class="blog-posts-area">
 						<c:forEach var="post" items="${posts}">
+						
 							<!-- Single Featured Post -->
 							<div class="single-blog-post featured-post mb-30 ">
 								<div class="post-thumb">
@@ -126,7 +127,8 @@
 										src="static/img/newspaper-img/thumbnail/${post.id}.jpg" alt=""></a>
 								</div>
 								<div class="post-data">
-									<a href="#" class="post-catagory">${post.type}</a> <a href="#"
+									<a href="#" class="post-catagory">${post.type}</a>
+									 <a href="#"
 										class="post-title">
 										<h6>${post.title}</h6>
 									</a>
@@ -142,7 +144,7 @@
 							<hr />
 
 						</c:forEach>
-
+						
 					</div>
 
 
@@ -221,7 +223,7 @@
 		<!-- ##### Footer Add Area End ##### -->
 
 		<!-- ##### Footer Area Start ##### -->
-		<footer class="footer-area" style="margin-bottom:-550px">
+		<footer class="footer-area" style="margin-bottom: -550px">
 
 			<!-- Main Footer Area -->
 			<div class="main-footer-area">

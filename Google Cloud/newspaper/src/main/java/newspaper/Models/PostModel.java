@@ -24,12 +24,13 @@ public class PostModel implements Serializable{
 	private String image3;
 	private String image4;
 	private String type;
+	private String author;
 	
 	
 	//Constructors
 	public PostModel() {}
 	public PostModel(String title, String description, String thumbnail, String content1, String content2,
-			String content3, String content4, String image1, String image2, String image3, String image4, String type) {
+			String content3, String content4, String image1, String image2, String image3, String image4, String type, String author) {
 		super();
 		this.title = title;
 		this.description = description;
@@ -43,6 +44,7 @@ public class PostModel implements Serializable{
 		this.image3 = image3;
 		this.image4 = image4;
 		this.type = type;
+		this.author=author;
 	}
 	//Getters and Setters
 	public int getId() {
@@ -69,8 +71,14 @@ public class PostModel implements Serializable{
 	public void setThumbnail(String thumbnail) {
 		this.thumbnail = thumbnail;
 	}
+	public String getContent1() {
+		return content1;
+	}
 	public String getContent2() {
 		return content2;
+	}
+	public void setContent1(String content1) {
+		this.content1 = content1;
 	}
 	public void setContent2(String content2) {
 		this.content2 = content2;
@@ -116,6 +124,12 @@ public class PostModel implements Serializable{
 	}
 	public void setType(String type) {
 		this.type = type;
+	}
+	public String getAuthor() {
+		return author;
+	}
+	public void setAuthor(String author) {
+		this.author = author;
 	}
 	@Override
 	public String toString() {
