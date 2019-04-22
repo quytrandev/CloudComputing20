@@ -65,6 +65,7 @@
         </dependencies>
     </plugin>
     </plugins>
+    
   </build>
   
 </project>
