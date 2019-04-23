@@ -37,18 +37,6 @@
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
   </dependencies>
-  <repositories>
-    <repository>
-        <id>spring-releases</id>
-        <url>https://repo.spring.io/libs-release</url>
-    </repository>
-</repositories>
-<pluginRepositories>
-    <pluginRepository>
-        <id>spring-releases</id>
-        <url>https://repo.spring.io/libs-release</url>
-    </pluginRepository>
-</pluginRepositories>
   <build>
   
     <finalName>newspaper</finalName>
@@ -63,6 +51,11 @@
                 <version>1.2.1.RELEASE</version>
             </dependency>
         </dependencies>
+    </plugin>
+    <plugin>
+    	<groupId>com.google.cloud.tools</groupId>
+    	<artifactId>appengine-maven-plugin</artifactId>
+    	<version>1.3.1</version>
     </plugin>
     </plugins>
   </build>
